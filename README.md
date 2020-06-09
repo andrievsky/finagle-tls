@@ -1,9 +1,12 @@
 Significant TLS performance degradation after switching to AdoptOpenJDK 11 or above. Checked on Debian and Mac. Reproducible both locally and using k8s cluster with official AdoptOpenJDK images.
 
-Platform: Debian, Mac
-Sbt: 1.3.12
-Scala: 2.13.2, 2.12.8, 2.11.12
-Finagle: 20.5.0
+**Platform**: Debian, Mac
+
+**Sbt**: 1.3.12
+
+**Scala**: 2.13.2, 2.12.8, 2.11.12
+
+**Finagle**: 20.5.0
 
 ### Expected behavior
 
@@ -48,7 +51,9 @@ Please checkout complete project from [https://github.com/andrievsky/finagle-tls
 
 #### Java 8
 `sdk use java 8.0.222.hs-adpt`
+
 `sbt run`
+
 `ab -n 10000 -c 10 https://localhost:8443/`
 
 > Percentage of the requests served within a certain time (ms)
@@ -66,7 +71,9 @@ Please checkout complete project from [https://github.com/andrievsky/finagle-tls
 
 #### Java 11
 `sdk use java 11.0.7.hs-adpt`
+
 `sbt run`
+
 `ab -n 10000 -c 10 https://localhost:8443/`
 
 > Percentage of the requests served within a certain time (ms)
