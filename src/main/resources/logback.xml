@@ -1,0 +1,14 @@
+<configuration>
+    <logger name="io.netty" level="INFO" />
+    <logger name="com.twitter" level="INFO" />
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date %-5level [%thread] %logger - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="${LOG_LEVEL_ROOT:-info}">
+        <appender-ref ref="console" />
+    </root>
+</configuration>

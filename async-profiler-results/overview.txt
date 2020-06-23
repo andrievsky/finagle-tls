@@ -1,0 +1,105 @@
+Performance test results using Docker
+
+image: amd64/openjdk:8-jre
+java version:
+openjdk version "1.8.0_252"
+OpenJDK Runtime Environment (build 1.8.0_252-b09)
+OpenJDK 64-Bit Server VM (build 25.252-b09, mixed mode)
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:       30   76  23.7     72     392
+Processing:     1   11   9.7      9     257
+Waiting:        1    9   7.5      7     257
+Total:         34   87  24.0     81     547
+
+Percentage of the requests served within a certain time (ms)
+  50%     81
+  66%     91
+  75%    104
+  80%    108
+  90%    115
+  95%    122
+  98%    146
+  99%    167
+ 100%    547 (longest request)
+
+=========================================================================
+
+image: amd64/openjdk:11-jre
+java version:
+openjdk version "11.0.7" 2020-04-14
+OpenJDK Runtime Environment 18.9 (build 11.0.7+10)
+OpenJDK 64-Bit Server VM 18.9 (build 11.0.7+10, mixed mode)
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:      138  214  31.6    209     494
+Processing:     1    3   2.8      2     121
+Waiting:        1    2   2.6      2     116
+Total:        140  217  31.9    212     591
+
+Percentage of the requests served within a certain time (ms)
+  50%    212
+  66%    226
+  75%    235
+  80%    241
+  90%    258
+  95%    274
+  98%    293
+  99%    309
+ 100%    591 (longest request)
+
+=========================================================================
+
+
+image: adoptopenjdk/openjdk8:debianslim-jre
+java version:
+openjdk version "1.8.0_252"
+OpenJDK Runtime Environment (AdoptOpenJDK)(build 1.8.0_252-b09)
+OpenJDK 64-Bit Server VM (AdoptOpenJDK)(build 25.252-b09, mixed mode)
+
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:       28   56  18.0     56     467
+Processing:     1    9   8.8      6     419
+Waiting:        1    8   7.6      5     419
+Total:         31   66  17.7     62     510
+
+Percentage of the requests served within a certain time (ms)
+  50%     62
+  66%     65
+  75%     70
+  80%     73
+  90%     79
+  95%     85
+  98%     98
+  99%    117
+ 100%    510 (longest request)
+
+=========================================================================
+
+image: adoptopenjdk/openjdk11:debianslim-jre
+java version:
+openjdk version "11.0.7" 2020-04-14
+OpenJDK Runtime Environment AdoptOpenJDK (build 11.0.7+10)
+OpenJDK 64-Bit Server VM AdoptOpenJDK (build 11.0.7+10, mixed mode)
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:      127  202  30.1    198     527
+Processing:     1    3   3.7      2     170
+Waiting:        1    2   3.5      1     170
+Total:        129  205  30.6    201     645
+
+Percentage of the requests served within a certain time (ms)
+  50%    201
+  66%    213
+  75%    223
+  80%    228
+  90%    245
+  95%    258
+  98%    277
+  99%    293
+ 100%    645 (longest request)

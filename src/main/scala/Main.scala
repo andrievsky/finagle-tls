@@ -6,6 +6,9 @@ import com.twitter.finagle.{Http, Service, http}
 import com.twitter.util.{Await, Future}
 
 object Main extends App {
+  val hasOpenSsl = io.netty.handler.ssl.OpenSsl.isAvailable()
+  println("has openssl? " + hasOpenSsl)
+
   val keyCredentials =
     KeyCredentials.CertKeyAndChain(
       new File("src/main/resources/localhost.crt"),
